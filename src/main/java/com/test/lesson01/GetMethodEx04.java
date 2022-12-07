@@ -38,5 +38,7 @@ public class GetMethodEx04 extends HttpServlet {
 		out.print("<tr><th>이메일</th><td>" + email + "</td></tr>");
 		out.print("</table>");
 		out.print("</body></html>");
+		
+		// 테스트용 주석 추가
 	}
 }
