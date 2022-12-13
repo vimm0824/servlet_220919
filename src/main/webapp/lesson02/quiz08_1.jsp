@@ -91,8 +91,8 @@
 			<img alt="book" src="<%= image %>">
 		</div>
 		<div>
-			<h1><%= title %></h1>
-			<span class="text-info display-3"><%= author %></span><br>
+			<span class="display-2 text-weight"><%= title %></span><br>
+			<span class="text-info display-4"><%= author %></span><br>
 			<span class="text-secondary display-4"><%= publisher %></span>
 		</div>
 	</div>
