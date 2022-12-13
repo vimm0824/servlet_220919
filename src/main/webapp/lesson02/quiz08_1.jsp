@@ -24,7 +24,6 @@
 </head>
 <body>
 	<%
-		int id = Integer.valueOf(request.getParameter("id"));
 		List<Map<String, Object>> list = new ArrayList<>();
 		Map<String, Object> map = new HashMap<String, Object>() {
 			{
@@ -69,6 +68,10 @@
 			}
 		};
 		list.add(map);
+	%>	
+		
+	<%	
+		int id = Integer.valueOf(request.getParameter("id"));
 		
 		String title = null;
 		String author = null;
@@ -82,18 +85,19 @@
 				author = (String)item.get("author");
 				publisher = (String)item.get("publisher");
 				image = (String)item.get("image");
+				break;
 			}
 		}
 	%>
 	
 	<div class="container d-flex">
 		<div>
-			<img alt="book" src="<%= image %>">
+			<img alt="book" src="<%= image %>" width=300 height=400>
 		</div>
 		<div>
-			<span class="display-2 text-weight"><%= title %></span><br>
-			<span class="text-info display-4"><%= author %></span><br>
-			<span class="text-secondary display-4"><%= publisher %></span>
+			<span class="display-1 font-weight-bold d-block"><%= title %></span>
+			<span class="text-info display-3 d-block"><%= author %></span>
+			<span class="text-secondary display-4 d-block"><%= publisher %></span>
 		</div>
 	</div>
 	

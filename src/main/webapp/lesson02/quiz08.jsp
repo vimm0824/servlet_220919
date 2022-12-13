@@ -86,7 +86,7 @@
 			<tbody>
 				<tr>
 					<td class="text-center"><%=item.get("id")%></td>
-					<td class="text-center"><img alt="책표지" src="<%=item.get("image")%>" width=80px height=100px></td>
+					<td class="text-center"><img alt="책표지" src="<%=item.get("image")%>" width=80px height=104px></td>
 					<td class="text-center"><a href="/lesson02/quiz08_1.jsp?id=<%= item.get("id") %>"><%= item.get("title") %></a></td>
 				</tr>
 			</tbody>
