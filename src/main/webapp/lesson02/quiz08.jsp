@@ -72,32 +72,28 @@
 
 	<div class="container">
 		<h1 class="text-center">책 목록</h1>
-		<form>
-			<table class="table">
-				<thead>
-					<tr>
-						<th>id</th>
-						<th>표지</th>
-						<th>제목</th>
-					</tr>
-				</thead>
-				<%
-				for (Map<String, Object> item : list) {
-				%>
-				<tbody>
-					<tr>
-						<td><%=item.get("id")%></td>
-						<td><img alt="책표지" src="<%=item.get("image")%>" width=80px
-							height=100px></td>
-						<td><a></a></td>
-						<!--item.get("title")e") %> -->
-					</tr>
-				</tbody>
-				<%
-				}
-				%>
-				</tabel>
-		</form>
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="text-center">id</th>
+					<th class="text-center">표지</th>
+					<th class="text-center">제목</th>
+				</tr>
+			</thead>
+			<%
+			for (Map<String, Object> item : list) {
+			%>
+			<tbody>
+				<tr>
+					<td class="text-center"><%=item.get("id")%></td>
+					<td class="text-center"><img alt="책표지" src="<%=item.get("image")%>" width=80px height=100px></td>
+					<td class="text-center"><a href="/lesson02/quiz08_1.jsp?id=<%= item.get("id") %>"><%= item.get("title") %></a></td>
+				</tr>
+			</tbody>
+			<%
+			}
+			%>
+		</tabel>
 	</div>
 </body>
 </html>
