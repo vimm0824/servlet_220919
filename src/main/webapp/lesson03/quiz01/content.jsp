@@ -138,32 +138,30 @@ map = new HashMap<String, String>() {
 list.add(map);
 %>
 
-<div class="contents">
-	<table class="table">
-		<thead>
-			<tr class="text-center">
-				<th>채널</th>
-				<th>채널명</th>
-				<th>카테고리</th>
-			</tr>
-		</thead>
-		<%
-		String category = request.getParameter("category");
-		
-		for (Map<String, String> item : list) {
-			if (item.get("category").equals(category) || category == null) {
-		%>
-		<tbody class="text-center">
-			<tr>
-				<td><%=item.get("ch")%></td>
-				<td><%=item.get("name")%></td>
-				<td><%=item.get("category")%></td>
-			</tr>
-		</tbody>
-	
-		<%
+<table class="table text-center">
+	<thead>
+		<tr>
+			<th>채널</th>
+			<th>채널명</th>
+			<th>카테고리</th>
+		</tr>
+	</thead>
+	<%
+	String category = request.getParameter("category");
+
+	for (Map<String, String> item : list) {
+		if (item.get("category").equals(category) || category == null) {
+	%>
+	<tbody class="text-center">
+		<tr>
+			<td><%=item.get("ch")%></td>
+			<td><%=item.get("name")%></td>
+			<td><%=item.get("category")%></td>
+		</tr>
+	</tbody>
+
+	<%
 		}
-		}
-		%>
-	</table>
-</div>
+	}
+	%>
+</table>
