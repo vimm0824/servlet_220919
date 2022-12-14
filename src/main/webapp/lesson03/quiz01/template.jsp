@@ -1,10 +1,11 @@
+<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>레이아웃(템플릿)</title>
+<title>채널 안내</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
@@ -22,38 +23,17 @@
 	crossorigin="anonymous"></script>
 	
 	<style>
-		header {height:50px}
-		.bottom {height:700px}
-		.contents {height:90%}
-		footer {height:10%}
+		#wrap {height:1000px; width:1200px;}
+		header {height:50px;}
+		footer {height:50px;}
 	</style>
 </head>
 <body>
-	<div id="wrap" class="bg-dark">
+	<div id="wrap" class="container">
 		<jsp:include page="header.jsp" />
-		<div class="bottom bg-warning d-flex">
-			<jsp:include page="menu.jsp" />
-			<div class="right bg-success col-10">
-				<%
-					String contentName = "contents1.jsp";
-				%>
-				<jsp:include page="<%= contentName %>" />
-				<jsp:include page="footer.jsp" />
-			</div>
-		</div>
+		<jsp:include page="menu.jsp" />
+		<jsp:include page="contents.jsp" />
+		<jsp:include page="footer.jsp" />
 	</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
