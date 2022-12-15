@@ -86,6 +86,7 @@ musicList.add(musicInfo);
 
 <%
 String id = request.getParameter("id");
+
 if (id == null) { 
 %>
 <h3 class="m-2">가수 정보</h3>
