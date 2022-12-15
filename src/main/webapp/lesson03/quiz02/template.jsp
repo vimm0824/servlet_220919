@@ -18,10 +18,10 @@
 	.contents {min-height:500px;}
 	.main-box {border:1px solid green; height:200px; width:95%;}
 	footer {height:50px;} 
+	.music-info-text {font-size:12px; color:#777;}
 </style>
 </head>
 <body>
-
 	<div id="wrap">
 		<header class="d-flex align-items-center ml-4">
 			<jsp:include page="header.jsp" />

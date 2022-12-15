@@ -86,7 +86,7 @@ musicList.add(musicInfo);
 
 <%
 String id = request.getParameter("id");
-
+//String title = request.getParameter("title");
 if (id == null) { 
 %>
 <h3 class="m-2">가수 정보</h3>
@@ -95,7 +95,8 @@ if (id == null) {
 		class="m-3">
 	<div class="mt-3">
 		<h3><%=artistInfo.get("name")%></h3>
-		<span class="d-block"><%=artistInfo.get("agency")%></span> <span><%=artistInfo.get("debute")%>년</span>
+		<span class="d-block"><%=artistInfo.get("agency")%></span>
+		<span><%=artistInfo.get("debute")%>년</span>
 	</div>
 </div>
 <h3 class="m-2">곡 목록</h3>

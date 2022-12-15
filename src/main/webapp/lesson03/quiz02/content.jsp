@@ -74,28 +74,45 @@ musicInfo.put("lyricist", "아이유");
 musicList.add(musicInfo);
 %>
 <%
-String id = request.getParameter("id");
-
-int id2 = Integer.valueOf(id);
-Map<String, Object> m = new HashMap<>();
-for (Map<String, Object> item : musicList) {
-	if (id2 == (int) item.get("id")) {
-		m = item;
+Map<String, Object> target = new HashMap<>();
+if (request.getParameter("title") != null) {
+String title = request.getParameter("title");
+	for (Map<String, Object> item : musicList) {
+		if (item.get("title").equals(title)) {
+			target = item;
+		}
 	}
+}
+if (request.getParameter("id") != null) {
+int id = Integer.valueOf(request.getParameter("id"));
+for (Map<String, Object> item : musicList) {
+	if (id == (int) item.get("id")) {
+		target = item;
+	}
+}	
 }
 %>
 
 <h3 class="m-2">곡 정보</h3>
 <div class="main-box ml-3 d-flex">
-	<img alt="사진" src="<%=m.get("thumbnail")%>" widht=170 height=170
-		class="m-3">
+	<img alt="사진" src="<%=target.get("thumbnail")%>" widht=170 height=170 class="m-3">
 	<div class="mt-3">
-		<h3><%=m.get("title")%></h3>
-		<span class="text-success d-block"><%=m.get("singer")%></span> <span
-			class="d-block">앨범<%=m.get("album")%></span> <span class="d-block">재생시간<%=(int) m.get("time") / 60%>:<%=(int) musicInfo.get("time") % 60%></span>
-		<span class="d-block">작곡가<%=m.get("composer")%></span> <span
-			class="d-block">작사가<%=m.get("lyricist")%>년
-		</span>
+		<h1><%=target.get("title")%></h1>
+		<span class="text-success d-block"><%=target.get("singer")%></span> 
+		<div class="d-flex music-info-text">
+			<div>
+				<div>앨범</div>
+				<div>재생시간</div>
+				<div>작곡가</div>
+				<div>작사가</div>
+			</div>
+			<div class="ml-3">
+				<div><%=target.get("album")%></div>
+				<div><%=(int) target.get("time") / 60%>:<%=(int) target.get("time") % 60%></small></div>
+				<div><%=target.get("composer")%></div>
+				<div><%=target.get("lyricist")%></div>
+			</div>
+		</div>
 	</div>
 </div>
 <h3 class="m-2">가사</h3>

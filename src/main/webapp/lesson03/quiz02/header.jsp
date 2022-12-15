@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<h1 class="text-success">Melong</h1>
-<form method="get" action="/lesson03/quiz02/template.jsp"
+<a href="/lesson03/quiz02/template.jsp"><h1 class="text-success">Melong</h1></a>
+<form method="get" action="/lesson03/quiz02/content.jsp"
 	class="form-group mt-3">
 	<div class="m-4 d-flex search w-50">
 		<input type="text" name="title">
