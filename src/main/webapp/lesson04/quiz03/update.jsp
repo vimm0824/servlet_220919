@@ -47,22 +47,26 @@ ms.disconnect();
 			sellerId = sellerId.trim();
 			if (sellerId == "null") {
 				alert("닉네임을 선택해주세요!");
-				return;
+				$('#sellerId').focus();
+				return false;
 			}
 			
 			let title = $('#title').val();
 			title = title.trim();
 			if (title.length < 1) {
 				alert("제목을 입력해주세요!");
-				return;
+				$('#title').focus();
+				return false;
 			}
 			
 			let price = $('#price').val();
 			price = price.trim();
 			if (price.length < 1) {
 				alert("가격을 입력해주세요!");
-				return;
+				$('#price').focus();
+				return false;
 			}
 		})
 	})
 </script>
+

@@ -25,7 +25,8 @@ public class Quiz03Update extends HttpServlet {
 			sellerId = Integer.valueOf(sellerStr);
 		}
 		String title = request.getParameter("title");
-		int price = Integer.valueOf(request.getParameter("price"));
+		String priceStr = request.getParameter("price");
+		int price = Integer.valueOf(priceStr);
 		String description = request.getParameter("description");
 		String picture = request.getParameter("pictureUrl");
 		
