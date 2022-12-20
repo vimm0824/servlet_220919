@@ -17,25 +17,31 @@ public class Quiz03Update extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// request parametar
 		// sellerId title price description pictureUrl
-		int sellerId = Integer.valueOf(request.getParameter("sellerId"));
+		String sellerStr = request.getParameter("sellerId");
+		int sellerId = 0;
+		if (sellerStr.equals("null")) {
+			sellerStr = null;
+		} else {
+			sellerId = Integer.valueOf(sellerStr);
+		}
 		String title = request.getParameter("title");
 		int price = Integer.valueOf(request.getParameter("price"));
 		String description = request.getParameter("description");
-		String pictureUrl = request.getParameter("pictureUrl");
+		String picture = request.getParameter("pictureUrl");
 		
 		// DB connect
 		MysqlService ms = MysqlService.getInstance();
 		ms.connect();
 		
 		// insert query
+		
 		String insertQuery = "insert into `used_goods`"
-				+ "(`sellerId`, `title`, `price`, `description`, `pictureUrl`)"
+				+ "(`sellerId`, `title`, `price`, `description`, `picture`)"
 				+ "values "
-				+ "(" + sellerId + ", '" + title + "'," + price + ", '" + description + "', '" + pictureUrl + "')";
+				+ "(" + sellerId + ", '" + title + "'," + price + ", '" + description + "', '" + picture + "')";
 		try {
 			ms.update(insertQuery);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

@@ -12,7 +12,7 @@ ResultSet resultSet = ms.select(selectQuery);
 
 <%
 while (resultSet.next()) {
-	String imgUrl = resultSet.getString("B.pictureUrl");
+	String imgUrl = resultSet.getString("B.picture");
 	if (imgUrl == null) {
 		imgUrl = "https://mblogthumb-phinf.pstatic.net/20161008_248/sasa9508_1475929220263OMzsO_JPEG/2.jpg?type=w2";
 	}

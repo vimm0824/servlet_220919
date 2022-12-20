@@ -19,7 +19,7 @@
 	.box {gap:5px 10px; padding-top:10px;}
 	.goods-box{width:220px; height:280px; border: 1px solid #FF7F50;}
 	.goods-box:hover {background-color:#DCDCDC;}
-	.goods-box img {height:150px; width:160px;}
+	.goods-box img {height:150px; width:170px;}
 	.top-box-text {font-size:15px;}
 	.box-text {font-size:12px;}
 	footer {height:50px;}
